@@ -1,0 +1,11 @@
+{
+  "sub": true,
+  "devel": false,
+  "newcap": true,
+  "maxlen": 120,
+  "esnext": true,
+  "node": true,
+  "globals": {
+    "Promise": true
+  }
+}

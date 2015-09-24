@@ -1,0 +1,14 @@
+{
+  "name": "socket.io-tinyrpc",
+  "version": "0.1.0",
+  "description": "Tiny RPC client/server library over Socket.IO.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "author": "Yaroslav Admin <yaroslav.admin@nexthub.com>",
+  "license": "MIT"
+}
