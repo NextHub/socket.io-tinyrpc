@@ -31,7 +31,6 @@ describe('RPCSession', () => {
     });
 
     it('should receive exports', (done) => {
-        client.sendExports();
         expect(server.ready).to.eventually.eql(Object.keys(exports)).notify(done);
     });
 
