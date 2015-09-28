@@ -1,8 +1,8 @@
 var Promise = require('bluebird');
 var io = require('socket.io');
 
-var RPCSession = require('../../lib/core');
 var RPCClient = require('../../lib/client');
+var RPCServer = require('../../lib/server');
 
 var expect = require('chai').expect;
 
@@ -12,11 +12,11 @@ var exports = {
     server,
     client;
 
-describe('RPCClient', () => {
+describe('High-level API', () => {
     before(() => {
-        io(4001).on('connection', (connection) => {
-            server = new RPCSession(connection, exports);
-        });
+        server = new RPCServer(exports);
+        server.listen(4001);
+
         client = new RPCClient();
     });
 
