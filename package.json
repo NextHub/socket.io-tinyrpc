@@ -2,13 +2,37 @@
   "name": "socket.io-tinyrpc",
   "version": "0.1.0",
   "description": "Tiny RPC client/server library over Socket.IO.",
+
+  "author": "Yaroslav Admin <yaroslav.admin@nexthub.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NextHub/socket.io-tinyrpc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NextHub/socket.io-tinyrpc/issues"
+  },
+
+  "license": "MIT",
+
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "jshint -e es6 lib/ test/",
+    "test": "mocha --recursive"
   },
+
   "engines": {
     "node": ">=4.0.0"
   },
-  "author": "Yaroslav Admin <yaroslav.admin@nexthub.com>",
-  "license": "MIT"
+
+  "dependencies": {
+    "bluebird": "~2.10.1",
+    "socket.io": "~1.3.7",
+    "socket.io-client": "~1.3.7"
+  },
+
+  "devDependencies": {
+    "chai": "~3.3.0",
+    "chai-as-promised": "~5.1.0",
+    "mocha": "~2.3.3"
+  }
 }
