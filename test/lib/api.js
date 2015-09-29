@@ -21,7 +21,7 @@ describe('High-level API', () => {
     });
 
     it('should connect to the server and get exports, when connected', (done) => {
-        expect(client.connect('http://localhost:4001')).to.eventually.eql(Object.keys(exports)).notify(done);
+        expect(client.connect('http://localhost:4001')).to.eventually.have.all.keys(Object.keys(exports)).notify(done);
     });
 
     it('should execute remote procedure', (done) => {

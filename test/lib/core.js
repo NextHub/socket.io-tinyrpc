@@ -31,7 +31,7 @@ describe('RPCSession', () => {
     });
 
     it('should receive exports', (done) => {
-        expect(server.ready).to.eventually.eql(Object.keys(exports)).notify(done);
+        expect(server.ready).to.eventually.have.all.keys(Object.keys(exports)).notify(done);
     });
 
     it('should execute remote procedure', (done) => {
