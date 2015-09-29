@@ -21,7 +21,7 @@ var RPCClient = (function () {
         value: function connect(uri, opts) {
             var _this = this;
 
-            this.session = new RPCSession(io.connect(uri, opts), this.locals);
+            this.session = new RPCSession(io.connect(uri + '/tinyrpc', opts), this.locals);
 
             this.session.ready.then(function (exports) {
                 var _iteratorNormalCompletion = true;
@@ -165,18 +165,14 @@ module.exports = RPCSession;
 (function (global){
 'use strict';
 
-var Promise = require('bluebird');
-
-module.exports = global.Promise || Promise;
+module.exports = global.Promise || require('bluebird');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"bluebird":undefined}],4:[function(require,module,exports){
 (function (global){
 'use strict';
 
-var socketIO = require('socket.io-client');
-
-module.exports = global.io || socketIO;
+module.exports = global.io || require('socket.io-client');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"socket.io-client":undefined}],5:[function(require,module,exports){
