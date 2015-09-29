@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.js"></script>
+    <script>
+        define('config', function () {
+            require.config({
+                baseUrl: '../dist',
+                paths: {
+                    'es6-shim': 'https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim',
+                    'socket.io-client': 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io'
+                }
+            });
+        });
+
+        require(['config'], function () {
+            require(['socket.io-tinyrpc', 'es6-shim'], function (TinyRPCClient) {
+                var client = new TinyRPCClient();
+
+                client.connect('http://localhost:4000')
+                        .then(function (exports) {
+                            return exports.double(8);
+                        })
+                        .then(function (result) {
+                            alert(result);
+                        });
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

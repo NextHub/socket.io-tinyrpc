@@ -16,8 +16,7 @@
 
   "main": "index.js",
   "scripts": {
-    "pretest": "jshint -e es6 lib/ test/",
-    "test": "mocha --recursive -r ./test/init"
+    "test": "make test"
   },
 
   "engines": {
@@ -31,8 +30,11 @@
   },
 
   "devDependencies": {
+    "babelify": "6.3.0",
+    "browserify": "~11.2.0",
     "chai": "~3.3.0",
     "chai-as-promised": "~5.1.0",
+    "jshint": "~2.8.0",
     "mocha": "~2.3.3"
   }
 }
